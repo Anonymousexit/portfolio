@@ -1,0 +1,3 @@
+check*.cjs
+.sites-runtime/
+node_modules/
