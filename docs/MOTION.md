@@ -15,7 +15,7 @@ The October 12 reference recording runs for approximately 115 seconds at 1350 ×
 
 The recording is the visual reference, not source animation data. Durations and easings are tuned approximations; the load entrance and blink are additions.
 
-The cursor uses a dot and YOU label. The contact banner retains its separate hover/focus color treatment.
+The cursor is an 18px circle with short, frame-rate-independent smoothing. It expands into a 38px ring over controls and compresses on press. Keyboard use, touch, window exit, and modal dialogs restore the native pointer; reduced motion or paused animations remove following delay. The contact banner retains its separate hover/focus color treatment.
 
 ## Tuning
 
