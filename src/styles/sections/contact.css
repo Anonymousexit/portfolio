@@ -100,8 +100,7 @@ footer button:hover {
 footer .hand {
   font-size: 24px;
 }
-.custom-cursor,
-.selection-lens {
+.custom-cursor {
   display: none;
 }
 .reveal {

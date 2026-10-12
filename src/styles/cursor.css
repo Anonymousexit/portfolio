@@ -36,39 +36,4 @@
   .custom-cursor.hover .cursor-tag {
     background: var(--pink);
   }
-  .selection-lens {
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: block;
-    pointer-events: none;
-    background: white;
-    mix-blend-mode: difference;
-    z-index: 120;
-    opacity: 0;
-    transition: opacity 0.18s;
-  }
-  .selection-lens.active {
-    opacity: 1;
-  }
-  .selection-lens i {
-    background: white;
-    border: 0;
-  }
-  .selection-lens i:nth-child(1) {
-    left: -4px;
-    top: -4px;
-  }
-  .selection-lens i:nth-child(2) {
-    right: -4px;
-    top: -4px;
-  }
-  .selection-lens i:nth-child(3) {
-    left: -4px;
-    bottom: -4px;
-  }
-  .selection-lens i:nth-child(4) {
-    right: -4px;
-    bottom: -4px;
-  }
 }

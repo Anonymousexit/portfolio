@@ -11,7 +11,7 @@ This is a static site written in HTML, CSS, and JavaScript modules. GSAP and Scr
 - `features/` owns page behavior: profile binding, clock, navigation, motion, project stacking, dialogs, and pointer effects.
 - `utils/` contains shared helpers.
 
-The motion module returns an `isPaused()` controller to the cursor module. Its GSAP matchMedia context owns all timelines, scroll triggers, and hover animations. Pausing, changing the system motion preference, or crossing the mobile breakpoint reverts the context and cleans up event listeners. Content returns to its visible CSS layout when motion is disabled.
+The motion module's GSAP matchMedia context owns all timelines, scroll triggers, and hover animations. Pausing, changing the system motion preference, or crossing the mobile breakpoint reverts the context and cleans up event listeners. Content returns to its visible CSS layout when motion is disabled.
 
 `features/motion/` separates hero choreography, section entrances, contact animation, hover feedback, and visibility-aware loops. The project stack's scroll animation lives in `features/project-stack.js`. See [Motion](MOTION.md) for the reference observations and tuning locations.
 

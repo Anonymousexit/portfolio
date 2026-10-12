@@ -52,5 +52,4 @@ export function initMotion() {
   });
   syncMotion();
   document.fonts.ready.then(() => ScrollTrigger.refresh());
-  return { isPaused: () => paused };
 }

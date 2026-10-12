@@ -583,9 +583,6 @@
     opacity: 1;
     transform: none;
   }
-  .selection-lens {
-    display: none !important;
-  }
   .scene-one {
     opacity: 1;
   }

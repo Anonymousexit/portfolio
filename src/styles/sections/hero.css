@@ -67,8 +67,7 @@
   border: 2px solid var(--cyan);
   position: relative;
 }
-.selected i,
-.selection-lens i {
+.selected i {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -76,23 +75,19 @@
   border: 1.5px solid var(--ink);
   z-index: 2;
 }
-.selected i:nth-last-child(4),
-.selection-lens i:nth-child(1) {
+.selected i:nth-last-child(4) {
   left: -6px;
   top: -6px;
 }
-.selected i:nth-last-child(3),
-.selection-lens i:nth-child(2) {
+.selected i:nth-last-child(3) {
   right: -6px;
   top: -6px;
 }
-.selected i:nth-last-child(2),
-.selection-lens i:nth-child(3) {
+.selected i:nth-last-child(2) {
   left: -6px;
   bottom: -6px;
 }
-.selected i:last-child,
-.selection-lens i:nth-child(4) {
+.selected i:last-child {
   right: -6px;
   bottom: -6px;
 }

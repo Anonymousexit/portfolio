@@ -48,6 +48,3 @@
 .motion-paused {
   scroll-behavior: auto;
 }
-.motion-paused .selection-lens {
-  display: none !important;
-}

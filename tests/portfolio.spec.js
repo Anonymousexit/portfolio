@@ -81,60 +81,13 @@ test('mobile navigation and project layout remain usable', async ({ page }) => {
   await expect(page.locator('#dialog-content h2')).toHaveText(projects.at(-1).title);
 });
 
-test('motion preferences disable hover inversion until motion resumes', async ({ page }) => {
+test('motion preferences and pause controls remain available', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await expect(page.locator('html')).toHaveClass(/motion-paused/);
-  expect(
-    await page.locator('.flower').evaluate((element) => getComputedStyle(element).animationName),
-  ).toBe('none');
-  await page.locator('.name-wrap').hover();
-  await expect(page.locator('.selection-lens')).not.toHaveClass(/active/);
+  await expect(page.locator('.flower')).toHaveCSS('animation-name', 'none');
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await expect(page.locator('html')).not.toHaveClass(/motion-paused/);
-  await page.locator('.name-wrap').hover();
-  await expect(page.locator('.selection-lens')).toHaveClass(/active/);
-  await page.mouse.move(720, 155);
-  await expect(page.locator('.selection-lens')).not.toHaveClass(/active/);
   await page.getByRole('button', { name: 'Pause animations' }).click();
   await expect(page.locator('html')).toHaveClass(/motion-paused/);
-});
-
-test('inversion follows hover on the character and never starts on blank canvas', async ({
-  page,
-}) => {
-  await page.goto('/');
-  const lens = page.locator('.selection-lens');
-  await page.mouse.move(720, 155);
-  await page.mouse.down();
-  await page.mouse.move(900, 170, { steps: 4 });
-  await expect(lens).not.toHaveClass(/active/);
-  await page.mouse.up();
-  expect(await page.locator('body').evaluate((el) => el.style.userSelect)).toBe('');
-
-  const character = page.locator('.contact-character');
-  await character.scrollIntoViewIfNeeded();
-  await character.hover({ position: { x: 100, y: 100 } });
-  await expect(lens).toHaveClass(/active/);
-  await expect(lens).toHaveCSS('mix-blend-mode', 'difference');
-  const initial = await lens.boundingBox();
-  const bounds = await character.boundingBox();
-  await page.mouse.move(bounds.x + 150, bounds.y + 150);
-  await expect.poll(async () => (await lens.boundingBox()).x).toBeGreaterThan(initial.x + 30);
-  await page.locator('.contact-intro h2').hover();
-  await expect(lens).not.toHaveClass(/active/);
-});
-
-test('touch input does not activate an inversion cursor', async ({ browser }) => {
-  const context = await browser.newContext({
-    viewport: { width: 390, height: 844 },
-    isMobile: true,
-    hasTouch: true,
-  });
-  const page = await context.newPage();
-  await page.goto('/');
-  await page.locator('.name-wrap').tap();
-  await expect(page.locator('.selection-lens')).not.toHaveClass(/active/);
-  await expect(page.locator('.selection-lens')).toBeHidden();
-  await context.close();
 });
