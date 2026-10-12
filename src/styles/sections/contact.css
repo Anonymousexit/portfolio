@@ -1,0 +1,91 @@
+.contact-intro {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 85px;
+}
+.big-asterisk {
+  font-size: 260px;
+  line-height: 1;
+  color: var(--green);
+  animation: spin 30s linear infinite;
+}
+.contact-intro h2 {
+  font-size: 100px;
+  margin: 15px 0 25px;
+}
+.contact-intro p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.contact-intro .hand {
+  font-size: 25px;
+}
+.contact-banner {
+  height: 350px;
+  width: 100%;
+  border-radius: 24px;
+  background: repeating-linear-gradient(
+    125deg,
+    var(--yellow) 0 180px,
+    #502c29 180px 310px,
+    var(--yellow) 310px 480px
+  );
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  background: var(--cyan);
+  border: 3px solid var(--ink);
+  padding: 10px 15px;
+  font: clamp(40px, 6vw, 82px)/1 Flux;
+  transform: rotate(-5deg);
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 0.2s,
+    background 0.2s;
+}
+.contact-label > span {
+  background: var(--pink);
+  color: var(--yellow);
+  font: 45px var(--sans);
+  border: 1px solid var(--ink);
+  padding: 0 7px;
+}
+.contact-banner:hover .contact-label {
+  transform: rotate(0) scale(1.05);
+  background: var(--ink);
+  color: var(--cyan);
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+  gap: 20px;
+}
+footer div {
+  display: flex;
+  gap: 25px;
+}
+footer button {
+  font: 11px var(--mono);
+}
+footer button:hover {
+  color: var(--pink);
+}
+footer .hand {
+  font-size: 24px;
+}
+.custom-cursor,
+.selection-lens {
+  display: none;
+}
+.reveal {
+  opacity: 1;
+}

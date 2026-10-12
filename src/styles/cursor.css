@@ -1,0 +1,72 @@
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 160;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .custom-cursor.active {
+    opacity: 1;
+  }
+  .cursor-dot {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--ink);
+    border-radius: 50%;
+    left: -5px;
+    top: -5px;
+  }
+  .cursor-tag {
+    display: block;
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    font: 10px var(--mono);
+    background: var(--ink);
+    color: white;
+    border-radius: 0 12px 12px 12px;
+    padding: 4px 7px;
+  }
+  .custom-cursor.hover .cursor-dot,
+  .custom-cursor.hover .cursor-tag {
+    background: var(--pink);
+  }
+  .selection-lens {
+    position: fixed;
+    display: block;
+    pointer-events: none;
+    background: white;
+    mix-blend-mode: difference;
+    z-index: 120;
+    opacity: 0;
+    transition: opacity 0.18s;
+  }
+  .selection-lens.active {
+    opacity: 1;
+  }
+  .selection-lens i {
+    background: white;
+    border: 0;
+  }
+  .selection-lens i:nth-child(1) {
+    left: -4px;
+    top: -4px;
+  }
+  .selection-lens i:nth-child(2) {
+    right: -4px;
+    top: -4px;
+  }
+  .selection-lens i:nth-child(3) {
+    left: -4px;
+    bottom: -4px;
+  }
+  .selection-lens i:nth-child(4) {
+    right: -4px;
+    bottom: -4px;
+  }
+}

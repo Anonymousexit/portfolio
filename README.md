@@ -1,22 +1,69 @@
-# Portfolio canvas
+# Personal Canvas — Portfolio
 
-A static, responsive personal portfolio inspired by the supplied reference and recording. Content is intentionally placeholder content, not a claim of completed work.
+A responsive portfolio built with plain HTML, CSS, and JavaScript. The existing visual design, typography, motion, and completed four-card stack are preserved. Content remains intentionally replaceable.
 
-## Add your content
-Edit `dist/content.js` for your name, initials, role, availability, contact links, portrait, workspace photo, and four projects. Put your assets in `dist/assets/` and reference them with a relative path such as `assets/portrait.jpg`. Each project's `cover` field accepts an image path. Project cards and the case-study dialogs use the same project data.
+## Start locally
 
-`dist/index.html` holds the biography, introduction, notes, and footer text. `dist/app.js` holds the case-study outline and playground entries. `dist/styles.css` contains the visual design, responsive layouts, and motion.
+Use Node.js 20 or newer:
 
-## Preview
-Serve the `dist` folder through any local HTTP server. No dependency installation or build is required.
+```sh
+npm ci
+npm run dev
+```
 
-## Interactions
-- Sticky project folders on desktop; individual project cards on mobile.
-- Custom cursor label and a drag-to-select color-inversion rectangle on non-interactive canvas areas.
-- Floating labels, cycling hero artwork, animated geometric accents, scroll reveals, and responsive hover states.
-- Project and playground dialogs, contact placeholders, working in-page navigation, and a mobile menu.
-- Animation pause button, system reduced-motion support, keyboard focus states, and native accessible dialogs.
-- Contact links activate when you supply real values. Nothing submits to an external service.
+Open `http://127.0.0.1:4173`. Source changes rebuild automatically; refresh the browser to see them. Use `npm run dev -- --port 4180` if that port is already occupied.
 
-## Typography
-The reference's published font declarations identify Flux Variable, Inter / Inter Display, DM Mono, and Just Me Again Down Here. The local font files match those declarations. Font sources are recorded in `FONT-SOURCES.md`.
+## Folder structure
+
+```text
+portfolio/
+├── src/
+│   ├── index.html               # Page sections and static copy
+│   ├── scripts/
+│   │   ├── main.js              # Application entry point
+│   │   ├── data/                # Profile, projects, and playground content
+│   │   ├── components/          # Repeated card markup
+│   │   ├── features/            # Navigation, motion, dialogs, cursor, etc.
+│   │   └── utils/               # Shared helpers
+│   └── styles/                  # Formatted CSS, separated by responsibility
+│       ├── main.css             # Ordered style entry point
+│       ├── sections/            # Page-section styles
+│       ├── components/          # Cards and dialogs
+│       └── responsive.css       # Breakpoints and reduced-motion fallback
+├── public/assets/
+│   ├── fonts/                   # Existing reference typography
+│   └── images/                  # Add your photos and project covers here
+├── scripts/                     # Build, dev server, and source checks
+├── tests/                       # Portable browser checks
+├── docs/                        # Editing guide, architecture, font sources
+├── .openai/hosting.json          # Existing Sites identity/configuration
+├── package.json
+├── package-lock.json
+└── dist/                        # Generated output; do not edit
+```
+
+Start personalization in `src/scripts/data/profile.js` and `src/scripts/data/projects.js`. See [the content guide](docs/CONTENT.md) for image paths and the rest of the editable content.
+
+## Commands
+
+| Command                | Purpose                                        |
+| ---------------------- | ---------------------------------------------- |
+| `npm run dev`          | Build, watch source changes, and serve locally |
+| `npm run build`        | Generate `dist/` for deployment                |
+| `npm run preview`      | Serve the current build without watching       |
+| `npm run check`        | Check JavaScript syntax and relative imports   |
+| `npm test`             | Build and run browser checks                   |
+| `npm run format`       | Format source and documentation                |
+| `npm run format:check` | Verify formatting                              |
+
+Browser checks use installed Microsoft Edge on Windows. On other systems, run `npx playwright install chromium` once. Set `PLAYWRIGHT_CHANNEL` to another installed Playwright browser channel when needed.
+
+Build and preview need no production dependencies. The development packages provide formatting and browser verification only.
+
+## Further details
+
+- [Adding your content](docs/CONTENT.md)
+- [Architecture and behavior](docs/ARCHITECTURE.md)
+- [Font sources](docs/FONT-SOURCES.md)
+
+Research remains in the sibling `reference-analysis/` directory. Temporary verification output and historical check scripts live in ignored `artifacts/` and do not ship with the site.

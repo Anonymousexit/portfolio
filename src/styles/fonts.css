@@ -1,0 +1,29 @@
+@font-face {
+  font-family: Flux;
+  src: url('../assets/fonts/flux.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url('../assets/fonts/inter.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: InterDisplay;
+  src: url('../assets/fonts/inter-display.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: DMMono;
+  src: url('../assets/fonts/dm-mono.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Hand;
+  src: url('../assets/fonts/hand.woff2') format('woff2');
+  font-display: swap;
+}

@@ -1,0 +1,105 @@
+.experiment {
+  display: block;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+}
+.experiment-tab {
+  display: block;
+  width: 42%;
+  height: 37px;
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+  background: var(--ink);
+  color: white;
+  padding: 12px 16px;
+  font: 10px var(--mono);
+}
+.experiment-surface {
+  height: 320px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 9px solid var(--ink);
+}
+.experiment h3 {
+  font-size: 25px;
+  letter-spacing: -0.035em;
+  margin: 20px 0 7px;
+}
+.experiment > p {
+  font: 11px var(--mono);
+  color: #777;
+}
+.experiment-one {
+  background: #f1ebdf;
+}
+.experiment-one .type-sample {
+  font: 140px/0.8 Flux;
+  letter-spacing: -0.06em;
+  transition:
+    font-weight 0.6s,
+    transform 0.6s;
+  transform: rotate(-8deg);
+}
+.experiment:hover .type-sample {
+  transform: rotate(8deg);
+  font-weight: 1000;
+}
+.experiment-two {
+  background: var(--pink);
+  color: var(--yellow);
+}
+.experiment-two b {
+  font-size: 250px;
+  line-height: 1;
+  font-weight: 400;
+  animation: spin 22s linear infinite;
+}
+.experiment-three {
+  background: var(--cyan);
+}
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  height: 72%;
+  gap: 12px;
+  transform: rotate(-9deg);
+  transition: transform 0.6s;
+}
+.color-grid i {
+  background: var(--ink);
+}
+.color-grid i:nth-child(2n) {
+  background: var(--yellow);
+  border-radius: 50%;
+}
+.color-grid i:nth-child(3n) {
+  background: var(--pink);
+  border-radius: 50% 50% 0 50%;
+}
+.experiment:hover .color-grid {
+  transform: rotate(5deg) scale(1.05);
+}
+.experiment-four {
+  background: #f0c94c;
+}
+.experiment-four .play-type {
+  font: 77px/0.86 Flux;
+  letter-spacing: -0.035em;
+  transform: rotate(-7deg);
+  transition: transform 0.5s;
+}
+.experiment:hover .play-type {
+  transform: rotate(4deg);
+}
+.experiment:nth-child(2) {
+  transform: rotate(2deg);
+}
+.experiment:nth-child(3) {
+  transform: rotate(-2deg);
+}
+.experiment:hover .experiment-surface {
+  border-color: var(--pink);
+}

@@ -1,0 +1,20 @@
+.playground-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 55px;
+}
+.playground-head h2 {
+  font-size: 90px;
+  margin-top: 20px;
+}
+.playground-head p {
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 270px;
+}
+.experiment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 35px;
+}

@@ -1,0 +1,591 @@
+@media (min-width: 1500px) {
+  .hero {
+    max-height: 950px;
+  }
+  .hero-bottom {
+    bottom: 12%;
+  }
+  .ribbon-green {
+    left: 24%;
+  }
+  .mini-reel {
+    left: 10%;
+  }
+}
+@media (max-width: 1100px) {
+  .topbar nav a {
+    padding: 0 13px;
+    font-size: 10px;
+    gap: 7px;
+  }
+  .nav-right {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .mini-reel {
+    width: 175px;
+    left: 4%;
+    top: 22%;
+  }
+  .reel-frame {
+    height: 120px;
+  }
+  .ribbon-blue {
+    font-size: 12px;
+    right: 3%;
+    top: 29%;
+    padding: 14px;
+  }
+  .ribbon-green {
+    font-size: 11px;
+    left: 17%;
+    top: 39%;
+    padding: 13px;
+  }
+  .sticker-yellow {
+    left: 6%;
+    top: 62%;
+  }
+  .sticker-pink {
+    right: 5%;
+    top: 62%;
+    font-size: 11px;
+  }
+  .name-wrap h1 {
+    font-size: 9vw;
+  }
+  .about-statement {
+    font-size: 58px;
+    max-width: 680px;
+  }
+  .polaroid {
+    width: 135px;
+    top: 160px;
+  }
+  .polaroid .hand {
+    font-size: 17px;
+  }
+  .project-body {
+    gap: 20px;
+    padding: 18px;
+    min-height: 480px;
+  }
+  .project-art {
+    min-height: 425px;
+    padding: 23px;
+  }
+  .project-copy h3 {
+    font-size: 46px;
+  }
+  .folder-tab {
+    padding-left: 17px;
+    font-size: 11px;
+  }
+  .contact-intro {
+    gap: 60px;
+  }
+  .experiment-surface {
+    height: 280px;
+  }
+  .journal-heading h2 {
+    font-size: 55px;
+  }
+}
+@media (max-width: 760px) {
+  :root {
+    --nav: 56px;
+  }
+  .brand {
+    width: 55px;
+  }
+  .topbar nav {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 8px 10px #0001;
+    border-bottom: 1px solid;
+  }
+  .topbar nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar nav a {
+    padding: 18px 24px;
+    font-size: 13px;
+  }
+  .nav-right {
+    margin-left: auto;
+    padding: 0 10px;
+  }
+  .contact-small {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-right: 15px;
+    font: 11px var(--mono);
+  }
+  .hero {
+    height: 850px;
+    min-height: 850px;
+    max-height: none;
+  }
+  .ruler {
+    height: 29px;
+    font-size: 8px;
+  }
+  .hero-clock {
+    top: 105px;
+    font-size: 11px;
+  }
+  .hero-intro {
+    top: 165px;
+    font-size: 34px;
+  }
+  .name-wrap {
+    top: 244px;
+    padding: 14px 12px;
+  }
+  .name-wrap h1 {
+    font-size: clamp(49px, 11.9vw, 85px);
+  }
+  .availability {
+    top: 355px;
+    font-size: 10px;
+  }
+  .mini-reel {
+    top: 425px;
+    left: 7%;
+    width: 135px;
+  }
+  .reel-frame {
+    height: 96px;
+    border-width: 6px;
+  }
+  .mini-reel > .hand {
+    font-size: 17px;
+  }
+  .reel-scene span {
+    font-size: 42px;
+  }
+  .reel-scene b {
+    font-size: 46px;
+  }
+  .reel-scene small {
+    font-size: 6px;
+  }
+  .scene-two span,
+  .scene-three span {
+    font-size: 27px;
+  }
+  .ribbon-green {
+    left: 6%;
+    top: 208px;
+    padding: 9px 12px;
+    font-size: 10px;
+    transform: rotate(-11deg);
+  }
+  .ribbon-blue {
+    right: 4%;
+    top: 395px;
+    padding: 10px 12px;
+    font-size: 10px;
+    transform: rotate(-8deg);
+  }
+  .avatar-one {
+    top: 142px;
+    left: 8%;
+    width: 36px;
+    height: 36px;
+    font-size: 10px;
+  }
+  .avatar-two {
+    top: 554px;
+    right: 10%;
+    width: 37px;
+    height: 37px;
+    font-size: 10px;
+  }
+  .sticker {
+    padding: 12px 13px;
+    font-size: 10px;
+  }
+  .sticker-yellow {
+    left: 53%;
+    top: 479px;
+    --tilt: 9deg;
+  }
+  .sticker-pink {
+    right: 13%;
+    top: 565px;
+    font-size: 9px;
+    --tilt: -7deg;
+  }
+  .sticker-pointer {
+    font-size: 22px;
+    top: -17px;
+    right: -20px;
+  }
+  .hero-bottom {
+    bottom: 52px;
+    width: 95%;
+  }
+  .hero-statement {
+    font-size: 26px;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+  }
+  .target-mark {
+    font-size: 29px;
+  }
+  .action {
+    font-size: 10px;
+  }
+  .action-icon {
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+  }
+  .canvas-note {
+    bottom: 14px;
+    left: 15px;
+    font-size: 8px;
+  }
+  .scroll-note {
+    font-size: 19px;
+    bottom: 13px;
+    right: 16px;
+  }
+  .section-space {
+    padding: 65px 23px;
+  }
+  .about {
+    min-height: 820px;
+    padding-top: 52px;
+  }
+  .section-note {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+  .little-selection {
+    font-size: 25px;
+  }
+  .about-statement {
+    font-size: 40px;
+    margin: 50px auto 34px;
+    line-height: 1.15;
+    letter-spacing: -1.7px;
+  }
+  .polaroid {
+    top: auto;
+    bottom: 52px;
+    width: 130px;
+  }
+  .portrait {
+    left: 12%;
+  }
+  .workspace {
+    right: 12%;
+  }
+  .photo-slot span {
+    font-size: 43px;
+  }
+  .photo-slot small {
+    font-size: 8px;
+  }
+  .skills {
+    gap: 5px;
+    max-width: 360px;
+  }
+  .skill {
+    font-size: 21px;
+    padding: 7px 9px;
+    letter-spacing: -0.6px;
+  }
+  .skill-symbol {
+    width: 39px;
+    height: 39px;
+    font-size: 30px;
+  }
+  .work {
+    padding: 25px 20px 0;
+  }
+  .section-heading {
+    padding: 10px 0 70px;
+  }
+  .section-heading h2 {
+    font-size: 68px;
+  }
+  .section-heading > .hand {
+    font-size: 24px;
+  }
+  .sticky-note {
+    font-size: 12px;
+    padding: 14px 19px;
+  }
+  .project-stack {
+    gap: 0;
+  }
+  .project-stack::after {
+    display: none;
+  }
+  .project {
+    position: relative;
+    top: auto;
+    margin-bottom: 38px;
+    padding-top: 42px;
+  }
+  .folder-tab {
+    height: 43px;
+    width: 48%;
+    left: 0;
+    font-size: 10px;
+    padding-left: 17px;
+  }
+  .project-body {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding: 20px;
+    min-height: 0;
+  }
+  .project-copy {
+    padding: 0;
+  }
+  .project-copy > .mono {
+    font-size: 10px;
+  }
+  .project-copy h3 {
+    font-size: 43px;
+    margin: 20px 0 17px;
+    max-width: 330px;
+  }
+  .project-copy p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+  .project-link {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+  .project-tags {
+    padding-top: 20px;
+  }
+  .project-tags span {
+    font-size: 8px;
+  }
+  .project-art {
+    min-height: 310px;
+  }
+  .art-word {
+    font-size: 59px;
+  }
+  .art-number {
+    font-size: 170px;
+  }
+  .art-category {
+    font-size: 8px;
+  }
+  .project.is-covered .project-copy {
+    opacity: 1;
+  }
+  .project.is-covered .project-art::after {
+    display: none;
+  }
+  .work-end {
+    padding: 15px 0 0;
+  }
+  .work-end > .hand {
+    margin-top: 65px;
+  }
+  .playground-head {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .playground-head h2 {
+    font-size: 69px;
+  }
+  .playground-head p {
+    font-size: 17px;
+    margin-top: 25px;
+  }
+  .experiment-grid {
+    grid-template-columns: 1fr;
+    gap: 43px;
+  }
+  .experiment-surface {
+    height: 300px;
+  }
+  .experiment:nth-child(n) {
+    transform: none;
+  }
+  .experiment h3 {
+    font-size: 24px;
+  }
+  .journal-heading {
+    display: block;
+  }
+  .journal-heading h2 {
+    font-size: 47px;
+    margin-bottom: 20px;
+  }
+  .journal-heading > .mono {
+    font-size: 10px;
+  }
+  .note-row {
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 22px 0;
+  }
+  .note-row > .mono:first-child {
+    font-size: 9px;
+    width: 100%;
+  }
+  .note-row > span:nth-child(2) {
+    font-size: 21px;
+    max-width: 70%;
+    letter-spacing: -0.5px;
+  }
+  .note-state {
+    font-size: 8px;
+    max-width: 25%;
+    text-align: right;
+  }
+  .contact-intro {
+    gap: 22px;
+    align-items: center;
+    margin: 0 0 40px;
+  }
+  .big-asterisk {
+    font-size: 100px;
+  }
+  .contact-intro h2 {
+    font-size: 70px;
+    margin: 15px 0;
+  }
+  .contact-intro .hand {
+    font-size: 20px;
+  }
+  .contact-intro p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .contact-banner {
+    height: 240px;
+    border-radius: 12px;
+    background-size: 650px;
+  }
+  .contact-label {
+    padding: 8px;
+    gap: 7px;
+    font-size: 43px;
+    border-width: 2px;
+  }
+  .contact-label > span {
+    font-size: 21px;
+    padding: 0 4px;
+  }
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 32px;
+    gap: 25px;
+  }
+  footer > .mono {
+    font-size: 10px;
+    width: 100%;
+  }
+  footer div {
+    gap: 23px;
+  }
+  footer button {
+    font-size: 10px;
+  }
+  footer > .hand {
+    width: 100%;
+    font-size: 22px;
+  }
+  dialog {
+    padding: 55px 24px 30px;
+    box-shadow: 6px 6px 0 var(--cyan);
+  }
+  #dialog-content h2 {
+    font-size: 42px;
+  }
+  #dialog-content > p {
+    font-size: 16px;
+  }
+  .detail-outline {
+    grid-template-columns: 1fr;
+  }
+  .detail-meta {
+    gap: 25px;
+  }
+  .detail-meta b {
+    font-size: 16px;
+  }
+}
+@media (max-width: 370px) {
+  .contact-small span {
+    display: none;
+  }
+  .hero {
+    height: 850px;
+  }
+  .about-statement {
+    font-size: 35px;
+  }
+  .skill {
+    font-size: 18px;
+  }
+  .polaroid {
+    width: 115px;
+  }
+  .contact-label {
+    font-size: 36px;
+  }
+  .contact-intro {
+    gap: 13px;
+  }
+  .big-asterisk {
+    font-size: 76px;
+  }
+  .contact-intro h2 {
+    font-size: 62px;
+  }
+  .project-art {
+    min-height: 270px;
+  }
+  .art-word {
+    font-size: 51px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .js-motion .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .selection-lens {
+    display: none !important;
+  }
+  .scene-one {
+    opacity: 1;
+  }
+  .scene-two,
+  .scene-three {
+    opacity: 0;
+  }
+}

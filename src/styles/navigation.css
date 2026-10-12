@@ -1,0 +1,75 @@
+.topbar {
+  height: var(--nav);
+  background: #fff;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 90;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: stretch;
+  font: 12px var(--mono);
+}
+.brand {
+  width: 68px;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid #ddd;
+}
+.brand-dots {
+  font-size: 37px;
+  line-height: 1;
+}
+.topbar nav {
+  display: flex;
+}
+.topbar nav a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 20px;
+  transition: background 0.2s;
+}
+.topbar nav a span {
+  font-size: 23px;
+}
+.topbar nav a:hover,
+.topbar nav a.active {
+  background: var(--cyan);
+}
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+}
+.motion-toggle {
+  width: 32px;
+  height: 32px;
+  background: #eee;
+  border-radius: 50%;
+  font: 14px var(--mono);
+}
+.contact-small {
+  border: 1px solid;
+  padding: 8px 14px;
+  font: 12px var(--mono);
+}
+.contact-small:hover {
+  background: var(--pink);
+  color: white;
+}
+.menu-toggle {
+  display: none;
+}
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 10px;
+  z-index: 200;
+  background: var(--yellow);
+  padding: 12px;
+}
+.skip-link:focus {
+  top: 10px;
+}

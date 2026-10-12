@@ -1,0 +1,21 @@
+import { profile } from './data/profile.js';
+import { projects } from './data/projects.js';
+import { renderProjects } from './components/projects.js';
+import { renderExperiments } from './components/experiments.js';
+import { applyProfile } from './features/profile.js';
+import { initClock } from './features/clock.js';
+import { initMotion } from './features/motion.js';
+import { initNavigation } from './features/navigation.js';
+import { initProjectStack } from './features/project-stack.js';
+import { initDialogs } from './features/dialogs.js';
+import { initCursor } from './features/cursor.js';
+
+renderProjects(projects);
+renderExperiments();
+applyProfile(profile);
+initClock();
+const motion = initMotion();
+initNavigation();
+initProjectStack();
+initDialogs({ ...profile, projects });
+initCursor(motion);

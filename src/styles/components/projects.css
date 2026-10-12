@@ -1,0 +1,155 @@
+.project {
+  position: sticky;
+  top: 80px;
+  margin-bottom: 0;
+  padding-top: 62px;
+  z-index: calc(10 + var(--index));
+}
+.folder-tab {
+  position: absolute;
+  top: 0;
+  left: calc(var(--index) * 24%);
+  width: 25%;
+  height: 63px;
+  background: var(--project-color);
+  clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 25px;
+  font: 12px var(--mono);
+  color: var(--ink);
+}
+.project:nth-child(2) .folder-tab,
+.project:nth-child(4) .folder-tab {
+  color: white;
+}
+.project-body {
+  min-height: 515px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 35px;
+  border: 1px solid var(--project-color);
+  padding: 24px;
+  background: white;
+}
+.project-copy {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 12px 10px;
+}
+.project-copy h3 {
+  font-size: clamp(35px, 4.2vw, 60px);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+  margin: 25px 0;
+}
+.project-copy p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+  max-width: 305px;
+}
+.project-link {
+  font: 11px var(--mono);
+  border-bottom: 1px solid;
+  margin-top: 28px;
+  padding: 0 0 5px;
+}
+.project-link:hover {
+  color: var(--pink);
+}
+.project-tags {
+  display: flex;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+.project-tags span {
+  background: var(--ink);
+  color: white;
+  font: 9px var(--mono);
+  padding: 8px 10px;
+}
+.project-art {
+  min-width: 0;
+  width: 100%;
+  min-height: 450px;
+  border: 1px solid var(--ink);
+  text-align: left;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 35px;
+  position: relative;
+  transition: filter 0.4s;
+}
+.project-art i {
+  background: white;
+}
+.art-0 {
+  background: #b6e9f5;
+}
+.art-1 {
+  background: #ede8e0;
+}
+.art-2 {
+  background: var(--yellow);
+}
+.art-3 {
+  background: #f4b3cc;
+}
+.art-category {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: var(--ink);
+  color: white;
+  padding: 8px;
+  font-size: 10px;
+  z-index: 2;
+}
+.art-word {
+  font: clamp(42px, 5.4vw, 85px)/0.88 Flux;
+  letter-spacing: -0.045em;
+  position: relative;
+}
+.art-number {
+  position: absolute;
+  right: 25px;
+  bottom: 15px;
+  font: 200px/0.9 Flux;
+  color: #ffffff80;
+}
+.art-foot {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 10px;
+}
+.project-art:hover .art-word {
+  transform: rotate(-4deg);
+}
+.art-word {
+  transition: transform 0.5s;
+}
+.project-art::before {
+  content: '';
+  width: 170px;
+  height: 170px;
+  border: 1px solid #1113;
+  border-radius: 50%;
+  position: absolute;
+  right: 30px;
+  top: 35%;
+  box-shadow:
+    0 0 0 20px #ffffff16,
+    0 0 0 40px #ffffff16;
+}
+.project.is-covered .project-body {
+  filter: brightness(0.98);
+}

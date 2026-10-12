@@ -1,3 +1,7 @@
-check*.cjs
+dist/
+artifacts/
+test-results/
+playwright-report/
 .sites-runtime/
 node_modules/
+*.log

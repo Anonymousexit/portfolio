@@ -1,0 +1,134 @@
+.section-space {
+  padding: 90px max(6vw, 24px);
+}
+.about {
+  min-height: 820px;
+  position: relative;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-radius: 50% 50% 0 0/25px 25px 0 0;
+}
+.section-note {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 24px;
+}
+.little-selection {
+  display: inline-block;
+  font-size: 29px;
+  line-height: 1.2;
+  padding: 4px 10px;
+  border-color: var(--ink);
+}
+.little-selection i {
+  background: white;
+}
+.about-statement {
+  font-size: clamp(39px, 4.9vw, 72px);
+  line-height: 1.17;
+  letter-spacing: -0.045em;
+  max-width: 850px;
+  margin: 60px auto 48px;
+  position: relative;
+  z-index: 2;
+}
+.inline-tile {
+  display: inline-grid;
+  place-items: center;
+  width: 0.8em;
+  height: 0.8em;
+  font-size: 0.7em;
+  vertical-align: 5px;
+}
+.inline-flower {
+  color: var(--yellow);
+  display: inline-block;
+  animation: spin 17s linear infinite;
+}
+.cyan {
+  background: var(--cyan);
+}
+.yellow {
+  background: var(--yellow);
+}
+.green {
+  background: var(--green);
+}
+.pink {
+  background: var(--pink);
+  color: white;
+}
+.polaroid {
+  position: absolute;
+  top: 210px;
+  background: white;
+  padding: 10px 10px 14px;
+  box-shadow: 0 7px 23px #0002;
+  width: 165px;
+}
+.polaroid .hand {
+  font-size: 20px;
+  display: block;
+  margin-top: 12px;
+}
+.portrait {
+  left: 3%;
+  transform: rotate(12deg);
+}
+.workspace {
+  right: 3%;
+  transform: rotate(-13deg);
+}
+.photo-slot {
+  aspect-ratio: 1;
+  background: #f3f3f3;
+  background-image: repeating-linear-gradient(135deg, transparent 0 8px, #e7e7e7 8px 9px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+.photo-slot span {
+  font-family: Flux;
+  font-size: 54px;
+}
+.photo-slot small {
+  font: 9px var(--mono);
+}
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.skills {
+  max-width: 690px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.skill {
+  padding: 8px 13px;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+.skill-symbol {
+  height: 53px;
+  width: 53px;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+}
+.skill-symbol b {
+  font-weight: 400;
+  display: block;
+  animation: spin 9s linear infinite;
+}
+.skill-symbol.dots {
+  color: var(--pink);
+  animation: colors 4s steps(2) infinite;
+}

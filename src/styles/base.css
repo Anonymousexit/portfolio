@@ -1,0 +1,76 @@
+:root {
+  --ink: #111;
+  --cyan: #32c3e7;
+  --pink: #ed145c;
+  --yellow: #edb72c;
+  --green: #30b780;
+  --grid: rgba(17, 17, 17, 0.045);
+  --nav: 58px;
+  --mono: DMMono, monospace;
+  --sans: InterDisplay, Inter, Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  background-color: white;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 5px;
+}
+button {
+  border: 0;
+  background: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+.mono {
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.hand {
+  font-family: Hand, cursive;
+  font-size: 29px;
+  line-height: 1.1;
+}
+.display {
+  font-family: Flux, sans-serif;
+  font-weight: 1000;
+  line-height: 0.91;
+  letter-spacing: -0.045em;
+}
