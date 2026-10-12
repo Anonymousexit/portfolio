@@ -1,34 +1,56 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { animateHero } from './motion/hero.js';
+import { animateSections } from './motion/sections.js';
+import { animateContact } from './motion/contact.js';
+import { animateHovers } from './motion/hovers.js';
+import { initProjectStack } from './project-stack.js';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function initMotion() {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = reduce.matches;
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const toggle = document.querySelector('.motion-toggle');
+  let paused = preference.matches;
+  let media;
+  let introPlayed = false;
+
   function syncMotion() {
+    // Revert only this feature's animations. A pause must also reveal hidden content.
+    media?.revert();
     document.documentElement.classList.toggle('motion-paused', paused);
+    document.body.classList.toggle('gsap-ready', !paused);
     toggle.textContent = paused ? '▷' : 'Ⅱ';
     toggle.setAttribute('aria-label', paused ? 'Resume animations' : 'Pause animations');
     toggle.title = paused ? 'Resume animations' : 'Pause animations';
     toggle.setAttribute('aria-pressed', String(paused));
+    if (paused) return;
+
+    media = gsap.matchMedia();
+    media.add({ desktop: '(min-width: 761px)', mobile: '(max-width: 760px)' }, (context) => {
+      const { desktop } = context.conditions;
+      const cleanups = [
+        animateHero({ desktop, intro: !introPlayed && scrollY < 80 }),
+        animateSections({ desktop }),
+        animateContact(),
+        animateHovers(),
+      ];
+      if (desktop) initProjectStack();
+      introPlayed = true;
+      return () => cleanups.forEach((cleanup) => cleanup?.());
+    });
+    ScrollTrigger.refresh();
   }
-  syncMotion();
+
   toggle.addEventListener('click', () => {
     paused = !paused;
     syncMotion();
   });
-  reduce.addEventListener('change', (e) => {
-    paused = e.matches;
+  preference.addEventListener('change', (event) => {
+    paused = event.matches;
     syncMotion();
   });
-  if (!reduce.matches) document.body.classList.add('js-motion');
-  const revealObserver = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
-        }
-      }),
-    { threshold: 0.12 },
-  );
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  syncMotion();
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
   return { isPaused: () => paused };
 }

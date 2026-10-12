@@ -131,11 +131,13 @@
   left: 15px;
   font-size: 10px;
 }
-.project-art:hover .art-word {
-  transform: rotate(-4deg);
-}
-.art-word {
-  transition: transform 0.5s;
+.project-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, #fff3 0 13px, #fff9 13px 14px);
+  opacity: var(--cover-progress, 0);
 }
 .project-art::before {
   content: '';
@@ -149,7 +151,4 @@
   box-shadow:
     0 0 0 20px #ffffff16,
     0 0 0 40px #ffffff16;
-}
-.project.is-covered .project-body {
-  filter: brightness(0.98);
 }

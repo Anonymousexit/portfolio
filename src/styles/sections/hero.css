@@ -1,5 +1,5 @@
 .hero {
-  min-height: 760px;
+  min-height: 680px;
   height: 100svh;
   max-height: 1000px;
   position: relative;
@@ -147,7 +147,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  animation: reel 12s infinite;
+  opacity: 0;
   background: #ebafe5;
 }
 .reel-scene span {
@@ -167,7 +167,9 @@
 }
 .scene-two {
   background: var(--cyan);
-  animation-delay: -8s;
+}
+.scene-one {
+  opacity: 1;
 }
 .scene-two span,
 .scene-three span {
@@ -175,7 +177,6 @@
 }
 .scene-three {
   background: var(--yellow);
-  animation-delay: -4s;
 }
 .ribbon {
   position: absolute;
@@ -223,7 +224,7 @@
   border-radius: 28px 0 28px 28px;
   font: 13px var(--mono);
   z-index: 4;
-  animation: float 5s ease-in-out infinite;
+  transform: rotate(var(--tilt, 0deg));
 }
 .sticker-yellow {
   background: var(--yellow);
@@ -237,7 +238,6 @@
   right: 16%;
   top: 61%;
   --tilt: -8deg;
-  animation-delay: -2s;
 }
 .sticker-pointer {
   position: absolute;
@@ -277,6 +277,7 @@
   animation: spin 15s linear infinite;
 }
 .action {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -287,13 +288,11 @@
   border: 1px solid var(--ink);
   transition:
     background 0.2s,
-    color 0.2s,
-    transform 0.2s;
+    color 0.2s;
 }
 .action:hover {
   background: white;
   color: var(--ink);
-  transform: rotate(-2deg);
 }
 .action-icon {
   display: grid;

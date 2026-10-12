@@ -266,6 +266,11 @@
   .about {
     min-height: 820px;
     padding-top: 52px;
+    margin-top: 45px;
+  }
+  .about-curve {
+    height: 95px;
+    top: -45px;
   }
   .section-note {
     font-size: 23px;
@@ -406,10 +411,10 @@
     margin-bottom: 35px;
   }
   .playground-head h2 {
-    font-size: 69px;
+    font-size: clamp(32px, 8.5vw, 64px);
   }
   .playground-head p {
-    font-size: 17px;
+    font-size: 13px;
     margin-top: 25px;
   }
   .experiment-grid {
@@ -459,8 +464,8 @@
     align-items: center;
     margin: 0 0 40px;
   }
-  .big-asterisk {
-    font-size: 100px;
+  .contact-character {
+    width: 105px;
   }
   .contact-intro h2 {
     font-size: 70px;
@@ -484,7 +489,7 @@
     font-size: 43px;
     border-width: 2px;
   }
-  .contact-label > span {
+  .contact-label > span:not(.selection-frame) {
     font-size: 21px;
     padding: 0 4px;
   }
@@ -551,8 +556,8 @@
   .contact-intro {
     gap: 13px;
   }
-  .big-asterisk {
-    font-size: 76px;
+  .contact-character {
+    width: 80px;
   }
   .contact-intro h2 {
     font-size: 62px;

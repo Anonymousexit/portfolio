@@ -1,6 +1,7 @@
 import { cp, lstat, mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { build as bundle } from 'esbuild';
 
 export const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const outputDirectory = path.join(projectRoot, 'dist');
@@ -35,8 +36,20 @@ export async function build() {
   await readFile(path.join(sourceDirectory, 'index.html'), 'utf8');
   await rm(outputDirectory, { recursive: true, force: true });
   await mkdir(outputDirectory, { recursive: true });
-  await cp(sourceDirectory, outputDirectory, { recursive: true });
+  await cp(path.join(sourceDirectory, 'index.html'), path.join(outputDirectory, 'index.html'));
+  await cp(path.join(sourceDirectory, 'styles'), path.join(outputDirectory, 'styles'), {
+    recursive: true,
+  });
   await cp(publicDirectory, outputDirectory, { recursive: true });
+  await bundle({
+    entryPoints: [path.join(sourceDirectory, 'scripts/main.js')],
+    outfile: path.join(outputDirectory, 'scripts/main.js'),
+    bundle: true,
+    minify: true,
+    format: 'esm',
+    target: ['es2022'],
+    legalComments: 'linked',
+  });
   // Keep the original cascade while removing CSS import waterfalls in the published site.
   await writeFile(path.join(outputDirectory, 'styles/main.css'), styles.join('\n'));
   console.log('Built portfolio into dist/.');

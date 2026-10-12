@@ -5,11 +5,22 @@
   align-items: center;
   margin: 40px 0 85px;
 }
-.big-asterisk {
-  font-size: 260px;
-  line-height: 1;
-  color: var(--green);
-  animation: spin 30s linear infinite;
+.contact-character {
+  width: clamp(180px, 27vw, 350px);
+  flex-shrink: 0;
+}
+.character-svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+.character-shape {
+  fill: #4bc47e;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.character-eyes {
+  fill: var(--ink);
 }
 .contact-intro h2 {
   font-size: 100px;
@@ -23,20 +34,25 @@
   font-size: 25px;
 }
 .contact-banner {
-  height: 350px;
+  position: relative;
+  height: clamp(300px, 38vw, 520px);
   width: 100%;
   border-radius: 24px;
-  background: repeating-linear-gradient(
-    125deg,
-    var(--yellow) 0 180px,
-    #502c29 180px 310px,
-    var(--yellow) 310px 480px
-  );
+  background: #502c29;
   display: grid;
   place-items: center;
   overflow: hidden;
 }
+.contact-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--yellow);
+  pointer-events: none;
+}
 .contact-label {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 19px;
@@ -44,23 +60,25 @@
   border: 3px solid var(--ink);
   padding: 10px 15px;
   font: clamp(40px, 6vw, 82px)/1 Flux;
-  transform: rotate(-5deg);
+  transform: rotate(-3deg);
   transition:
-    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
     color 0.2s,
     background 0.2s;
 }
-.contact-label > span {
+.contact-label > span:not(.selection-frame) {
   background: var(--pink);
   color: var(--yellow);
   font: 45px var(--sans);
   border: 1px solid var(--ink);
   padding: 0 7px;
 }
-.contact-banner:hover .contact-label {
-  transform: rotate(0) scale(1.05);
+.contact-banner:hover .contact-label,
+.contact-banner:focus-visible .contact-label {
   background: var(--ink);
   color: var(--cyan);
+}
+.contact-banner:is(:hover, :focus-visible) .selection-frame {
+  color: white;
 }
 footer {
   display: flex;

@@ -1,6 +1,6 @@
 # Personal Canvas — Portfolio
 
-A responsive portfolio built with plain HTML, CSS, and JavaScript. The existing visual design, typography, motion, and completed four-card stack are preserved. Content remains intentionally replaceable.
+A responsive portfolio built with HTML, CSS, JavaScript, and GSAP. It includes a floating canvas hero, scroll reveals, a completed four-card folder stack, experiment cards, and an animated contact section. Content remains intentionally replaceable.
 
 ## Start locally
 
@@ -58,12 +58,13 @@ Start personalization in `src/scripts/data/profile.js` and `src/scripts/data/pro
 
 Browser checks use installed Microsoft Edge on Windows. On other systems, run `npx playwright install chromium` once. Set `PLAYWRIGHT_CHANNEL` to another installed Playwright browser channel when needed.
 
-Build and preview need no production dependencies. The development packages provide formatting and browser verification only.
+The build bundles GSAP and ScrollTrigger locally with esbuild. Run `npm ci` before building. The published output is static and needs no package installation or external animation CDN at runtime.
 
 ## Further details
 
 - [Adding your content](docs/CONTENT.md)
 - [Architecture and behavior](docs/ARCHITECTURE.md)
+- [Motion design and tuning](docs/MOTION.md)
 - [Font sources](docs/FONT-SOURCES.md)
 
 Research remains in the sibling `reference-analysis/` directory. Temporary verification output and historical check scripts live in ignored `artifacts/` and do not ship with the site.

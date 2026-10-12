@@ -1,17 +1,20 @@
 .playground-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 55px;
+  text-align: center;
+  margin: 20px 0 95px;
 }
 .playground-head h2 {
-  font-size: 90px;
+  font-size: clamp(45px, 7.6vw, 110px);
   margin-top: 20px;
 }
 .playground-head p {
-  font-size: 20px;
-  line-height: 1.4;
-  max-width: 270px;
+  display: inline-block;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.35;
+  background: #f3dea2;
+  padding: 17px 22px;
+  margin-top: 30px;
+  transform: rotate(-4deg);
 }
 .experiment-grid {
   display: grid;

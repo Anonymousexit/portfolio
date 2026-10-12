@@ -1,6 +1,6 @@
 # Architecture
 
-This is a static site using native browser ES modules. There is no client framework or production package dependency.
+This is a static site written in HTML, CSS, and JavaScript modules. GSAP and ScrollTrigger provide motion; esbuild bundles them with the application into a local module. There is no client framework or CDN dependency.
 
 ## Runtime
 
@@ -11,7 +11,9 @@ This is a static site using native browser ES modules. There is no client framew
 - `features/` owns page behavior: profile binding, clock, navigation, motion, project stacking, dialogs, and pointer effects.
 - `utils/` contains shared helpers.
 
-The motion module returns an `isPaused()` controller to the cursor module. This replaces the previous implicit shared variable. The portfolio no longer depends on a global `window.PORTFOLIO` object.
+The motion module returns an `isPaused()` controller to the cursor module. Its GSAP matchMedia context owns all timelines, scroll triggers, and hover animations. Pausing, changing the system motion preference, or crossing the mobile breakpoint reverts the context and cleans up event listeners. Content returns to its visible CSS layout when motion is disabled.
+
+`features/motion/` separates hero choreography, section entrances, contact animation, hover feedback, and visibility-aware loops. The project stack's scroll animation lives in `features/project-stack.js`. See [Motion](MOTION.md) for the reference observations and tuning locations.
 
 ## Styles
 
@@ -29,7 +31,7 @@ The existing `.openai/hosting.json` retains the Site identity and points to `dis
 
 ## Development and verification
 
-The build and local HTTP server use only Node's standard library. The dev command watches `src/` and `public/`, rebuilds on change, and asks you to refresh the browser.
+The build uses esbuild for JavaScript and concatenates local CSS. The HTTP server uses Node's standard library. The dev command watches `src/` and `public/`, rebuilds on change, and asks you to refresh the browser.
 
 Prettier enforces consistent formatting. Playwright exercises the actual browser behavior, including project-tab alignment at three desktop sizes, dialogs, mobile navigation, local font loading, and reduced-motion/pointer interactions.
 
