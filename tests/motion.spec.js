@@ -2,6 +2,53 @@ import { test, expect } from '@playwright/test';
 
 const transform = (locator) => locator.evaluate((element) => getComputedStyle(element).transform);
 
+test('typography stays readable through motion toggles and responsive reflow', async ({ page }) => {
+  await page.goto('/');
+  const name = page.getByRole('heading', { name: 'YOUR NAME', exact: true });
+  await expect(name).toBeVisible();
+  await expect.poll(() => page.locator('#hero-name .type-char').count()).toBeGreaterThan(0);
+  await page.getByRole('button', { name: 'Pause animations' }).click();
+  await expect(page.locator('.type-char')).toHaveCount(0);
+  await expect(name).toHaveText('YOUR NAME');
+  await page.getByRole('button', { name: 'Resume animations' }).click();
+  const heading = page.locator('.playground-head h2');
+  await heading.scrollIntoViewIfNeeded();
+  await expect
+    .poll(() =>
+      heading
+        .locator('.type-char')
+        .evaluateAll((chars) =>
+          chars.every((char) => Number(getComputedStyle(char).opacity) > 0.99),
+        ),
+    )
+    .toBe(true);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await heading.scrollIntoViewIfNeeded();
+  await expect(heading).toHaveText('EXPERIMENTS');
+  await expect
+    .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    .toBe(true);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('.type-char')).toHaveCount(0);
+  await expect(heading).toBeVisible();
+});
+
+test('rolling labels support keyboard focus and paused dialogs remain visible', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const action = page.locator('.hero .action');
+  await action.focus();
+  const line = action.locator('.roll-line').first();
+  await expect.poll(() => transform(line)).not.toBe('none');
+  await expect(action.locator('.roll-line[aria-hidden="true"]')).toHaveCount(1);
+  await page.getByRole('button', { name: 'Pause animations' }).click();
+  await expect(line).toHaveCSS('transform', 'none');
+  await page.locator('.contact-small').click();
+  await expect(page.locator('dialog')).toHaveCSS('opacity', '1');
+  await expect(page.locator('.contact-placeholder')).toBeVisible();
+});
+
 test('hero motion stops on pause and resumes without hiding content', async ({ page }) => {
   await page.goto('/');
   const sticker = page.locator('.sticker-yellow');

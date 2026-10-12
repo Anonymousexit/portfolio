@@ -43,6 +43,34 @@ dialog::backdrop {
   background: #1119;
   backdrop-filter: blur(7px);
 }
+dialog[open] {
+  animation: dialog-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+dialog[open]::backdrop {
+  animation: backdrop-enter 0.3s ease-out;
+}
+.motion-paused dialog,
+.motion-paused dialog::backdrop {
+  animation: none;
+}
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes backdrop-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .dialog-close {
   position: absolute;
   top: 15px;

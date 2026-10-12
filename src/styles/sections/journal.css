@@ -8,6 +8,8 @@
   font-size: 67px;
 }
 .note-row {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -15,6 +17,25 @@
   width: 100%;
   text-align: left;
   padding: 27px 0;
+}
+.note-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #32c3e710;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.note-row:is(:hover, :focus-visible)::before {
+  transform: scaleX(1);
+}
+.note-row > span:nth-child(2) {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.note-row:is(:hover, :focus-visible) > span:nth-child(2) {
+  transform: translateX(6px);
 }
 .note-row:last-child {
   border-bottom: 1px solid #aaa;

@@ -19,6 +19,10 @@ The cursor uses a dot and YOU label. The contact banner retains its separate hov
 
 ## Tuning
 
+- Typography: `features/motion/typography.js` uses GSAP SplitText for masked character entrances on the hero name and section headings. About copy gains opacity word by word on desktop; mobile uses a short entrance. SplitText restores original markup on pause and re-splits headings when fonts or widths change.
+- Buttons: `components/rolling-labels.js` prepares one accessible label and a hidden visual duplicate. `features/motion/hovers.js` rolls them on hover or keyboard focus.
+- Artwork: `features/motion/artwork.js` limits pointer tilt to three degrees on desktop with a fine pointer. It animates the artwork, leaving sticky project containers in normal layout, and resets when the pointer leaves or the page scrolls.
+- Notes and dialogs: the note-row highlight and short dialog entrance live in their component styles. Reduced motion and the pause control disable these transitions.
 - Hero: change the x/y waypoints and durations in `hero.js`. Mobile uses smaller horizontal travel.
 - Scroll entrances: adjust start positions, distance, and stagger in `sections.js`.
 - Contact: adjust rotation holds, spring easing, blink, and sign movement in `contact.js`.

@@ -13,7 +13,7 @@ This is a static site written in HTML, CSS, and JavaScript modules. GSAP and Scr
 
 The motion module's GSAP matchMedia context owns all timelines, scroll triggers, and hover animations. Pausing, changing the system motion preference, or crossing the mobile breakpoint reverts the context and cleans up event listeners. Content returns to its visible CSS layout when motion is disabled.
 
-`features/motion/` separates hero choreography, section entrances, contact animation, hover feedback, and visibility-aware loops. The project stack's scroll animation lives in `features/project-stack.js`. See [Motion](MOTION.md) for the reference observations and tuning locations.
+`features/motion/` separates hero choreography, SplitText typography, section entrances, artwork tilt, contact animation, hover feedback, and visibility-aware loops. Rolling button labels are prepared once in `components/rolling-labels.js`; the animation context owns only their motion. The project stack's scroll animation lives in `features/project-stack.js`. See [Motion](MOTION.md) for the reference observations and tuning locations.
 
 ## Styles
 

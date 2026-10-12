@@ -6,7 +6,7 @@ export function animateHero({ desktop, intro }) {
     gsap
       .timeline({ defaults: { ease: 'power3.out' } })
       .from('.hero-intro', { autoAlpha: 0, y: 18, duration: 0.55 })
-      .from('.name-wrap', { autoAlpha: 0, y: 28, scale: 0.94, duration: 0.85 }, 0.12)
+      .from('.name-wrap', { autoAlpha: 0, duration: 0.4 }, 0.12)
       .from('.name-wrap > i', { scale: 0, stagger: 0.06, ease: 'back.out(2)', duration: 0.35 }, 0.4)
       .from(
         '.mini-reel, .ribbon, .avatar',

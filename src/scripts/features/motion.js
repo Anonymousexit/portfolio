@@ -4,6 +4,8 @@ import { animateHero } from './motion/hero.js';
 import { animateSections } from './motion/sections.js';
 import { animateContact } from './motion/contact.js';
 import { animateHovers } from './motion/hovers.js';
+import { animateTypography } from './motion/typography.js';
+import { animateArtwork } from './motion/artwork.js';
 import { initProjectStack } from './project-stack.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,18 +29,28 @@ export function initMotion() {
     if (paused) return;
 
     media = gsap.matchMedia();
-    media.add({ desktop: '(min-width: 761px)', mobile: '(max-width: 760px)' }, (context) => {
-      const { desktop } = context.conditions;
-      const cleanups = [
-        animateHero({ desktop, intro: !introPlayed && scrollY < 80 }),
-        animateSections({ desktop }),
-        animateContact(),
-        animateHovers(),
-      ];
-      if (desktop) initProjectStack();
-      introPlayed = true;
-      return () => cleanups.forEach((cleanup) => cleanup?.());
-    });
+    media.add(
+      {
+        desktop: '(min-width: 761px)',
+        mobile: '(max-width: 760px)',
+        fine: '(hover: hover) and (pointer: fine)',
+      },
+      (context) => {
+        const { desktop, fine } = context.conditions;
+        const intro = !introPlayed && scrollY < 80;
+        animateTypography({ desktop, intro });
+        const cleanups = [
+          animateHero({ desktop, intro }),
+          animateSections({ desktop }),
+          animateContact(),
+          animateHovers(),
+        ];
+        if (desktop && fine) cleanups.push(animateArtwork());
+        if (desktop) initProjectStack();
+        introPlayed = true;
+        return () => cleanups.forEach((cleanup) => cleanup?.());
+      },
+    );
     ScrollTrigger.refresh();
   }
 

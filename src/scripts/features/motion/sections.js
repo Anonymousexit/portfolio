@@ -1,16 +1,20 @@
 import { gsap } from 'gsap';
 
 export function animateSections({ desktop }) {
-  gsap.utils.toArray('.reveal, .journal-heading, .note-row').forEach((element) => {
-    if (element.getBoundingClientRect().top < innerHeight * 0.9) return;
-    gsap.from(element, {
-      autoAlpha: 0,
-      y: 36,
-      duration: 0.85,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: element, start: 'top 90%', once: true },
+  gsap.utils
+    .toArray(
+      '.section-heading > .hand, .sticky-note, .playground-head p, .journal-heading > .mono, .note-row',
+    )
+    .forEach((element) => {
+      if (element.getBoundingClientRect().top < innerHeight * 0.9) return;
+      gsap.from(element, {
+        autoAlpha: 0,
+        y: 36,
+        duration: 0.85,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: element, start: 'top 90%', once: true },
+      });
     });
-  });
   gsap.from('.skills > *', {
     y: 24,
     autoAlpha: 0,
