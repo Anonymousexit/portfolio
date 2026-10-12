@@ -3,7 +3,7 @@ import { escapeHtml } from '../utils/html.js';
 
 const artwork = {
   one: '<span class="type-sample">Aa</span>',
-  two: '<b>✳</b>',
+  two: '<b data-icon="spark"></b>',
   three: `<span class="color-grid">${'<i></i>'.repeat(9)}</span>`,
   four: '<span class="play-type">WHAT<br>IF...?</span>',
 };

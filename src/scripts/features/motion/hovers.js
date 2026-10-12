@@ -16,10 +16,9 @@ export function animateHovers() {
       element.addEventListener(event, () => roll.reverse(), { signal: events.signal }),
     );
   });
-  document.querySelectorAll('.action, .project-art, .polaroid').forEach((element) => {
-    const target = element.querySelector('.action-icon, .art-word, .photo-slot');
+  document.querySelectorAll('.project-art, .polaroid').forEach((element) => {
+    const target = element.querySelector('.art-word, .photo-slot');
     const tween = gsap.to(target, {
-      rotation: element.matches('.action') ? 90 : 0,
       y: element.matches('.project-art') ? -8 : 0,
       scale: element.matches('.polaroid') ? 1.04 : 1,
       duration: 0.4,

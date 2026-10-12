@@ -58,7 +58,6 @@
 .inline-flower {
   color: var(--yellow);
   display: inline-block;
-  animation: spin 17s linear infinite;
 }
 .cyan {
   background: var(--cyan);
@@ -138,12 +137,6 @@
   place-items: center;
   font-size: 40px;
 }
-.skill-symbol b {
-  font-weight: 400;
-  display: block;
-  animation: spin 9s linear infinite;
-}
 .skill-symbol.dots {
   color: var(--pink);
-  animation: colors 4s steps(2) infinite;
 }

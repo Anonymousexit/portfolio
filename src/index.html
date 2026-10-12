@@ -17,17 +17,22 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Back to home"><span class="brand-dots">⠿</span></a>
+      <a class="brand" href="#home" aria-label="Back to home"
+        ><span class="brand-dots" data-icon="dots"></span
+      ></a>
       <nav aria-label="Main navigation">
-        <a class="active" href="#home"><span>⌂</span> HOME</a
-        ><a href="#about"><span>✳</span> ABOUT</a><a href="#work"><span>▰</span> CASE STUDIES</a
-        ><a href="#playground"><span>▟</span> PLAYGROUND</a
-        ><a href="#journal"><span>▤</span> NOTES</a>
+        <a class="active" href="#home"><span data-icon="home"></span> HOME</a
+        ><a href="#about"><span data-icon="spark"></span> ABOUT</a
+        ><a href="#work"><span data-icon="folder"></span> CASE STUDIES</a
+        ><a href="#playground"><span data-icon="steps"></span> PLAYGROUND</a
+        ><a href="#journal"><span data-icon="note"></span> NOTES</a>
       </nav>
       <div class="nav-right">
         <button class="motion-toggle" aria-label="Pause animations" title="Pause animations">
-          Ⅱ</button
-        ><button class="contact-small" data-contact>♥ <span>CONTACT</span></button>
+          <span data-icon="pause"></span></button
+        ><button class="contact-small" data-contact>
+          <span data-icon="heart"></span><span>CONTACT</span>
+        </button>
       </div>
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
     </header>
@@ -48,13 +53,13 @@
         <div class="mini-reel">
           <div class="reel-frame">
             <div class="reel-scene scene-one">
-              <span>Aa</span><b>✳</b><small>IDEAS IN MOTION</small>
+              <span>Aa</span><b data-icon="spark"></b><small>IDEAS IN MOTION</small>
             </div>
             <div class="reel-scene scene-two">
-              <span>PLAY<br />MORE.</span><b>◉</b>
+              <span>PLAY<br />MORE.</span><b data-icon="target"></b>
             </div>
             <div class="reel-scene scene-three">
-              <span>MAKE<br />IT REAL.</span><b>✳</b>
+              <span>MAKE<br />IT REAL.</span><b data-icon="flower"></b>
             </div>
           </div>
           <span class="hand">a little of what I do</span>
@@ -64,17 +69,20 @@
         <div class="avatar avatar-one" aria-hidden="true">YN</div>
         <div class="avatar avatar-two" aria-hidden="true">YN</div>
         <div class="sticker sticker-yellow">
-          <span class="sticker-pointer">➤</span><span data-copy="role">DESIGNER & BUILDER</span>
+          <span class="sticker-pointer" data-icon="pointer"></span
+          ><span data-copy="role">DESIGNER & BUILDER</span>
         </div>
         <div class="sticker sticker-pink">
-          <span class="sticker-pointer">➤</span>CREATIVE THINKING
+          <span class="sticker-pointer" data-icon="pointer"></span>CREATIVE THINKING
         </div>
         <div class="hero-bottom">
           <p class="hero-statement">
-            I turn <span class="target-mark" aria-hidden="true">◎</span> thoughtful ideas<br />into
-            digital experiences <span class="flower" aria-hidden="true">✿</span>.
+            I turn <span class="target-mark" data-icon="target"></span> thoughtful ideas<br />into
+            digital experiences <span class="flower" data-icon="flower"></span>.
           </p>
-          <a class="action" href="#work"><span class="action-icon">✳</span>EXPLORE MY WORK</a>
+          <a class="action" href="#work"
+            ><span class="action-icon" data-icon="arrow"></span>EXPLORE MY WORK</a
+          >
         </div>
         <span class="canvas-note mono">PERSONAL PORTFOLIO / 2026</span
         ><span class="scroll-note hand">scroll to explore</span>
@@ -103,17 +111,18 @@
           <span class="hand">where ideas happen</span>
         </div>
         <h2 class="about-statement reveal">
-          A curious mind <span class="inline-tile cyan">✳</span><br />with a love for making<br />things
-          <span class="inline-flower">✿</span> that matter.
+          A curious mind <span class="inline-tile cyan" data-icon="spark"></span><br />with a love
+          for making<br />things <span class="inline-flower" data-icon="flower"></span> that matter.
         </h2>
         <div class="skills">
           <span class="skill yellow">Design Engineering</span
-          ><span class="skill-symbol yellow"><b>❖</b></span
+          ><span class="skill-symbol yellow" data-icon="diamond"></span
           ><span class="skill green">Prototyping</span
-          ><span class="skill-symbol green"><b>✳</b></span
+          ><span class="skill-symbol green" data-icon="spark"></span
           ><span class="skill pink">Digital Products</span
-          ><span class="skill-symbol pink eye">◉</span><span class="skill cyan">Branding</span
-          ><span class="skill-symbol cyan dots">⠿</span>
+          ><span class="skill-symbol pink eye" data-icon="eye"></span
+          ><span class="skill cyan">Branding</span
+          ><span class="skill-symbol cyan dots" data-icon="dots"></span>
         </div>
       </section>
       <section class="work" id="work">
@@ -127,7 +136,7 @@
         <div class="project-stack" id="project-stack"></div>
         <div class="work-end">
           <a class="action" href="#playground"
-            ><span class="action-icon">✳</span>MORE ROOM TO PLAY</a
+            ><span class="action-icon" data-icon="arrow"></span>MORE ROOM TO PLAY</a
           ><span class="hand">the side quests</span>
         </div>
       </section>
@@ -194,8 +203,8 @@
             </g>
           </svg>
           <span class="contact-label"
-            ><span aria-hidden="true">✳</span>CONTACT<span aria-hidden="true">✳</span></span
-          >
+            ><span data-icon="spark"></span>CONTACT<span data-icon="spark"></span
+          ></span>
         </button>
         <footer>
           <span class="mono">YOUR NAME © <span id="year">2026</span></span>
@@ -212,7 +221,9 @@
       <span class="cursor-dot"></span><span class="cursor-tag">YOU</span>
     </div>
     <dialog id="detail-dialog">
-      <button class="dialog-close" aria-label="Close dialog">✕</button>
+      <button class="dialog-close" aria-label="Close dialog">
+        <span data-icon="close"></span>
+      </button>
       <div id="dialog-content"></div>
     </dialog>
   </body>

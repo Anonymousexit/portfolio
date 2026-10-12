@@ -19,6 +19,7 @@ The cursor uses a dot and YOU label. The contact banner retains its separate hov
 
 ## Tuning
 
+- Icons: `components/icons.js` owns the decorative SVG set; `features/motion/icons.js` gives small accents individual rhythms (target rings, blinking eye, dot sequence, geometric turns). Navigation icons, the heart, close button, and CTA chevrons respond to pointer entry and keyboard focus. Ambient icon timelines pause offscreen and when the browser tab is hidden, and revert with the global motion control. Edit `styles/components/icons.css` for sizing and alignment.
 - Typography: `features/motion/typography.js` uses GSAP SplitText for masked character entrances on the hero name and section headings. About copy gains opacity word by word on desktop; mobile uses a short entrance. SplitText restores original markup on pause and re-splits headings when fonts or widths change.
 - Buttons: `components/rolling-labels.js` prepares one accessible label and a hidden visual duplicate. `features/motion/hovers.js` rolls them on hover or keyboard focus.
 - Artwork: `features/motion/artwork.js` limits pointer tilt to three degrees on desktop with a fine pointer. It animates the artwork, leaving sticky project containers in normal layout, and resets when the pointer leaves or the page scrolls.

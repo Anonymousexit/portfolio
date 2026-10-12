@@ -4,6 +4,7 @@ import { renderProjects } from './components/projects.js';
 import { renderExperiments } from './components/experiments.js';
 import { addSelectionFrames } from './components/selection-frames.js';
 import { addRollingLabels } from './components/rolling-labels.js';
+import { renderIcons } from './components/icons.js';
 import { applyProfile } from './features/profile.js';
 import { initClock } from './features/clock.js';
 import { initMotion } from './features/motion.js';
@@ -13,6 +14,7 @@ import { initCursor } from './features/cursor.js';
 
 renderProjects(projects);
 renderExperiments();
+renderIcons();
 addSelectionFrames();
 addRollingLabels();
 applyProfile(profile);

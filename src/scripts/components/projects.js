@@ -5,7 +5,7 @@ export function renderProjects(projects) {
       (x, i) =>
         `<article class="project" style="--index:${i};--project-color:var(--${x.theme})">
 <div class="folder-tab">
-<span>▟</span> PROJECT 0${i + 1}</div>
+<span data-icon="folder"></span> PROJECT 0${i + 1}</div>
 <div class="project-body">
 <div class="project-copy">
 <span class="mono">0${i + 1} / SELECTED WORK</span>

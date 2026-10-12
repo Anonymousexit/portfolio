@@ -54,7 +54,6 @@
   font-size: 250px;
   line-height: 1;
   font-weight: 400;
-  animation: spin 22s linear infinite;
 }
 .experiment-three {
   background: var(--cyan);

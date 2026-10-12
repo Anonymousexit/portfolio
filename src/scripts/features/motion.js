@@ -6,6 +6,8 @@ import { animateContact } from './motion/contact.js';
 import { animateHovers } from './motion/hovers.js';
 import { animateTypography } from './motion/typography.js';
 import { animateArtwork } from './motion/artwork.js';
+import { animateIcons } from './motion/icons.js';
+import { icon } from '../components/icons.js';
 import { initProjectStack } from './project-stack.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +24,7 @@ export function initMotion() {
     media?.revert();
     document.documentElement.classList.toggle('motion-paused', paused);
     document.body.classList.toggle('gsap-ready', !paused);
-    toggle.textContent = paused ? '▷' : 'Ⅱ';
+    toggle.innerHTML = icon(paused ? 'play' : 'pause');
     toggle.setAttribute('aria-label', paused ? 'Resume animations' : 'Pause animations');
     toggle.title = paused ? 'Resume animations' : 'Pause animations';
     toggle.setAttribute('aria-pressed', String(paused));
@@ -44,6 +46,7 @@ export function initMotion() {
           animateSections({ desktop }),
           animateContact(),
           animateHovers(),
+          animateIcons(),
         ];
         if (desktop && fine) cleanups.push(animateArtwork());
         if (desktop) initProjectStack();

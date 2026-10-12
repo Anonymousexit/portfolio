@@ -38,6 +38,7 @@ test('rolling labels support keyboard focus and paused dialogs remain visible', 
 }) => {
   await page.goto('/');
   const action = page.locator('.hero .action');
+  await expect(action).toBeVisible();
   await action.focus();
   const line = action.locator('.roll-line').first();
   await expect.poll(() => transform(line)).not.toBe('none');

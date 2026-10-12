@@ -13,7 +13,9 @@ test('content and local assets load without runtime or request failures', async 
   await expect(page.locator('#hero-name')).toHaveText(profile.name);
   await expect(page.locator('.project')).toHaveCount(projects.length);
   await expect(page.locator('.experiment')).toHaveCount(4);
-  await page.evaluate(() => document.fonts.ready);
+  // SVG replacements no longer cause the fallback Inter face to load incidentally.
+  // Explicitly validate all bundled font files, including unused fallback faces.
+  await page.evaluate(() => Promise.all([...document.fonts].map((font) => font.load())));
   expect(
     await page.evaluate(() => [...document.fonts].every((font) => font.status === 'loaded')),
   ).toBe(true);
