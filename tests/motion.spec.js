@@ -48,7 +48,7 @@ test('rolling labels support keyboard focus and paused dialogs remain visible', 
   await expect(line).toHaveCSS('transform', 'none');
   await page.locator('.contact-small').click();
   await expect(page.locator('dialog')).toHaveCSS('opacity', '1');
-  await expect(page.locator('.contact-placeholder')).toBeVisible();
+  await expect(page.locator('.dialog-action')).toHaveAttribute('href', `mailto:${profile.email}`);
 });
 
 test('hero motion stops on pause and resumes without hiding content', async ({ page }) => {
@@ -133,5 +133,5 @@ test('contact character animates and the banner remains a working contact contro
   await banner.focus();
   await expect(banner.locator('.selection-frame')).toHaveCSS('opacity', '1');
   await page.keyboard.press('Enter');
-  await expect(page.locator('.contact-placeholder')).toBeVisible();
+  await expect(page.locator('.dialog-action')).toBeVisible();
 });

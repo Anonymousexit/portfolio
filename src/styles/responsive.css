@@ -269,6 +269,7 @@
   .about {
     min-height: 820px;
     padding-top: 52px;
+    padding-bottom: 300px;
     margin-top: 45px;
   }
   .about-curve {
@@ -510,7 +511,8 @@
   footer div {
     gap: 23px;
   }
-  footer button {
+  footer button,
+  footer [data-social] {
     font-size: 10px;
   }
   footer > .hand {
@@ -526,6 +528,10 @@
   }
   #dialog-content > p {
     font-size: 16px;
+  }
+  .dialog-action {
+    font-size: 12px;
+    padding: 12px;
   }
   .detail-outline {
     grid-template-columns: 1fr;

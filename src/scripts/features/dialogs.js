@@ -1,5 +1,6 @@
 import { experiments } from '../data/experiments.js';
 import { escapeHtml as safe } from '../utils/html.js';
+import { icon } from '../components/icons.js';
 export function initDialogs(p) {
   const dialog = document.querySelector('#detail-dialog'),
     dc = document.querySelector('#dialog-content');
@@ -32,7 +33,19 @@ export function initDialogs(p) {
         `<span class="mono">LET'S CONNECT</span>
 <h2>Good things start here.</h2>
 <p>Have a project in mind? I'd love to hear about it.</p>
-<a class="dialog-action" href="mailto:${safe(p.email)}">${safe(p.email)}</a>`,
+<a class="dialog-action" href="mailto:${safe(p.email)}">${safe(p.email)}</a>
+<div class="contact-socials" aria-label="Social profiles">
+${[
+  ['linkedin', 'LinkedIn'],
+  ['instagram', 'Instagram'],
+]
+  .filter(([key]) => p[key])
+  .map(
+    ([key, label]) =>
+      `<a href="${safe(p[key])}" target="_blank" rel="noopener noreferrer">${label} <span aria-hidden="true">↗</span></a>`,
+  )
+  .join('')}
+</div>`,
       );
     } else {
       show(
@@ -70,8 +83,13 @@ export function initDialogs(p) {
       show(
         `<span class="mono">PLAYGROUND / ${x.category}</span>
 <h2>${x.title}</h2>
-<p>A space for your sketches, motion tests, visual experiments, and things made just for the joy of making.</p>
-<div class="detail-placeholder">YOUR EXPERIMENT GOES HERE</div>`,
+<p>Small ideas, loose sketches, and happy accidents. A space to follow my curiosity and see where it leads.</p>
+<div class="exploration-note">
+  <span class="exploration-spark" aria-hidden="true">${icon('spark')}</span>
+  <span class="mono">NOT EVERYTHING NEEDS TO BE FINISHED.</span>
+  <p class="hand">Still exploring,<br>gathering thoughts.</p>
+  <span class="exploration-caption">A few experiments are taking shape.<br>More to share as the ideas unfold.</span>
+</div>`,
       );
     }
     if (t.hasAttribute('data-note')) {

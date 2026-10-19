@@ -32,7 +32,15 @@ test('project and contact dialogs open, close, and return keyboard focus', async
   await expect(page.locator('dialog')).not.toBeVisible();
   await expect(link).toBeFocused();
   await page.locator('.contact-small').click();
-  await expect(page.locator('.contact-placeholder')).toBeVisible();
+  await expect(page.locator('.dialog-action')).toHaveAttribute('href', `mailto:${profile.email}`);
+  await expect(page.locator('.contact-socials a').first()).toHaveAttribute(
+    'href',
+    profile.linkedin,
+  );
+  await expect(page.locator('.contact-socials a').last()).toHaveAttribute(
+    'href',
+    profile.instagram,
+  );
   await page.locator('.dialog-close').click();
   await expect(page.locator('.contact-small')).toBeFocused();
 });

@@ -32,6 +32,15 @@ export function animateIcons() {
             stagger: 0.18,
             ease: 'sine.inOut',
           });
+      } else if (name === 'code') {
+        loop
+          .to(svg.querySelector('.code-left'), { x: 1.5, duration: 0.65, ease: 'sine.inOut' })
+          .to(svg.querySelector('.code-right'), { x: -1.5, duration: 0.65, ease: 'sine.inOut' }, 0)
+          .to(svg.querySelectorAll('.code-left, .code-right'), {
+            x: 0,
+            duration: 0.65,
+            ease: 'sine.inOut',
+          });
       } else if (name === 'eye') {
         loop
           .to(svg.querySelector('.icon-pupil'), { x: 1.7, duration: 0.6, ease: 'sine.inOut' })

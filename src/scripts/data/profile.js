@@ -4,9 +4,9 @@ export const profile = {
   initials: 'JB',
   role: 'DESIGNER & BUILDER',
   availability: 'Open to work',
-  email: '',
-  linkedin: '',
-  instagram: '',
+  email: 'jeremiah.6013@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/jeremiah-bwala-13b109309/',
+  instagram: 'https://www.instagram.com/esoteric_nar/',
   portrait: '',
   workspace: '',
 };

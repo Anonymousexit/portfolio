@@ -91,10 +91,12 @@ footer div {
   display: flex;
   gap: 25px;
 }
-footer button {
+footer button,
+footer [data-social] {
   font: 11px var(--mono);
 }
-footer button:hover {
+footer button:hover,
+footer [data-social]:hover {
   color: var(--pink);
 }
 footer .hand {

@@ -23,6 +23,6 @@ workspace: 'assets/images/workspace.jpg',
 
 Each project's `cover` works the same way. The first three projects use the supplied screenshots with a `url` pointing to the live site; both the preview and its link open a new tab. The fourth project omits `url` and uses `assets/images/still-in-progress.svg`, with a short status dialog. When it is ready, replace its cover, content, and add its live `url`.
 
-The hero's illustrated availability badge is inline SVG in `src/index.html`, with its text supplied by the profile's `availability` field. Name and initials are filled in for Jeremiah Bwala; email, social links, portrait, and workspace remain empty until supplied. Empty photo fields keep the designed placeholders. Empty email and social fields show the existing contact placeholder rather than a fake submission. Use complete `https://` URLs for social links.
+The hero's illustrated availability badge is inline SVG in `src/index.html`, with its text supplied by the profile's `availability` field. Jeremiah Bwala's name, initials, email, LinkedIn, and Instagram are filled in. Portrait and workspace images remain empty until supplied. Empty photo fields keep the designed placeholders. Use complete `https://` URLs for social links. The footer and contact dialog use these same profile values.
 
 The current layout is designed around four featured projects. Replacing these records needs no layout changes; adding more also requires extending the desktop folder-tab layout and artwork themes.

@@ -1,5 +1,6 @@
 // One geometry system, independent of the visitor's installed fonts.
 const shapes = {
+  code: '<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"><path class="code-left" d="m7 6-5 6 5 6"/><path class="code-right" d="m17 6 5 6-5 6"/><path d="m14 3-4 18"/></g>',
   home: '<path d="m3 10 9-8 9 8v11h-6v-7H9v7H3Z"/>',
   spark: '<path d="M10 2h4v6l4-4 3 3-5 5 5 5-3 3-4-4v6h-4v-6l-4 4-3-3 5-5-5-5 3-3 4 4Z"/>',
   folder: '<path d="M2 5h8l2 3h10v13H2Z"/><path d="M3 3h8l2 3h8v1H12L10 4H3Z"/>',
