@@ -52,7 +52,7 @@
     font-size: 11px;
   }
   .name-wrap h1 {
-    font-size: 9vw;
+    font-size: 6.2vw;
   }
   .about-statement {
     font-size: 58px;
@@ -151,11 +151,14 @@
     padding: 14px 12px;
   }
   .name-wrap h1 {
-    font-size: clamp(49px, 11.9vw, 85px);
+    font-size: clamp(28px, 9.5vw, 68px);
   }
   .availability {
-    top: 355px;
+    top: 330px;
     font-size: 10px;
+  }
+  .availability-badge {
+    width: 170px;
   }
   .mini-reel {
     top: 425px;
@@ -535,7 +538,7 @@
   }
 }
 @media (max-width: 370px) {
-  .contact-small span {
+  .contact-small span:not([data-icon]) {
     display: none;
   }
   .hero {

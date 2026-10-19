@@ -62,43 +62,7 @@ export function initDialogs(p) {
         `<span class="mono">PROJECT 0${i + 1} / ${safe(x.category)}</span>
 <h2>${safe(x.title)}</h2>
 <p>${safe(x.description)}</p>
-<div class="detail-meta">
-<div>
-<span>ROLE</span>
-<b>Your role</b>
-</div>
-<div>
-<span>TIMELINE</span>
-<b>Project duration</b>
-</div>
-<div>
-<span>DELIVERABLE</span>
-<b>${safe(x.category.toLowerCase())}</b>
-</div>
-</div>
-<div class="detail-placeholder">YOUR PROJECT IMAGE OR FILM</div>
-<div class="detail-outline">
-<section>
-<span class="mono">01 / CONTEXT</span>
-<h3>The challenge</h3>
-<p>Your project’s starting point: who it was for, what needed to change, and why it mattered.</p>
-</section>
-<section>
-<span class="mono">02 / EXPLORATION</span>
-<h3>The process</h3>
-<p>Your research, early ideas, and the decisions that shaped the direction.</p>
-</section>
-<section>
-<span class="mono">03 / EXECUTION</span>
-<h3>The outcome</h3>
-<p>The final experience, the details you cared about, and what you delivered.</p>
-</section>
-<section>
-<span class="mono">04 / REFLECTION</span>
-<h3>What I learned</h3>
-<p>The results, discoveries, and things you would take into your next project.</p>
-</section>
-</div>`,
+<img class="detail-project-image" src="${safe(x.cover)}" alt="Still in progress. Good things take shape." />`,
       );
     }
     if (t.hasAttribute('data-experiment')) {

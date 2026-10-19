@@ -1,15 +1,16 @@
 import { test, expect } from '@playwright/test';
+import { profile } from '../src/scripts/data/profile.js';
 
 const transform = (locator) => locator.evaluate((element) => getComputedStyle(element).transform);
 
 test('typography stays readable through motion toggles and responsive reflow', async ({ page }) => {
   await page.goto('/');
-  const name = page.getByRole('heading', { name: 'YOUR NAME', exact: true });
+  const name = page.getByRole('heading', { name: profile.name, exact: true });
   await expect(name).toBeVisible();
   await expect.poll(() => page.locator('#hero-name .type-char').count()).toBeGreaterThan(0);
   await page.getByRole('button', { name: 'Pause animations' }).click();
   await expect(page.locator('.type-char')).toHaveCount(0);
-  await expect(name).toHaveText('YOUR NAME');
+  await expect(name).toHaveText(profile.name);
   await page.getByRole('button', { name: 'Resume animations' }).click();
   const heading = page.locator('.playground-head h2');
   await heading.scrollIntoViewIfNeeded();

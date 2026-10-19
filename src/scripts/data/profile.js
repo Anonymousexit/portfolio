@@ -1,9 +1,9 @@
 // Personal details and optional image paths, relative to the site root.
 export const profile = {
-  name: 'YOUR NAME',
-  initials: 'YN',
+  name: 'Jeremiah Bwala',
+  initials: 'JB',
   role: 'DESIGNER & BUILDER',
-  availability: "OPEN TO WHAT'S NEXT",
+  availability: 'Open to work',
   email: '',
   linkedin: '',
   instagram: '',

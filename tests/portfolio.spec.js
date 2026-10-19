@@ -24,10 +24,10 @@ test('content and local assets load without runtime or request failures', async 
 
 test('project and contact dialogs open, close, and return keyboard focus', async ({ page }) => {
   await page.goto('/');
-  const link = page.locator('.project-link').first();
+  const link = page.locator('.project-link').last();
   await link.click();
   await expect(page.locator('dialog')).toBeVisible();
-  await expect(page.locator('#dialog-content h2')).toHaveText(projects[0].title);
+  await expect(page.locator('#dialog-content h2')).toHaveText(projects.at(-1).title);
   await page.keyboard.press('Escape');
   await expect(page.locator('dialog')).not.toBeVisible();
   await expect(link).toBeFocused();

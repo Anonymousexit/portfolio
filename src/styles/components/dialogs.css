@@ -29,6 +29,13 @@
 .project-art.has-cover .art-foot {
   display: none;
 }
+.detail-project-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 28px;
+  border: 1px solid var(--ink);
+}
 dialog {
   width: min(870px, calc(100vw - 32px));
   max-height: 85svh;

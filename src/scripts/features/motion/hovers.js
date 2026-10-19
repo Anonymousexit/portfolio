@@ -17,7 +17,8 @@ export function animateHovers() {
     );
   });
   document.querySelectorAll('.project-art, .polaroid').forEach((element) => {
-    const target = element.querySelector('.art-word, .photo-slot');
+    const target = element.querySelector('.project-preview, .progress-art, .art-word, .photo-slot');
+    if (!target) return;
     const tween = gsap.to(target, {
       y: element.matches('.project-art') ? -8 : 0,
       scale: element.matches('.polaroid') ? 1.04 : 1,
